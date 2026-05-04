@@ -1,0 +1,4 @@
+interface:
+  display_name: "Google Analytics 4"
+  short_description: "GA4 setup, event design, AdSense revenue, and privacy-safe tracking"
+  default_prompt: "Use $google-analytics to implement or repair Google Analytics 4 on this website, define a clean event and key-event strategy, link AdSense reporting when relevant, and keep the implementation aligned with consent and data-protection requirements."

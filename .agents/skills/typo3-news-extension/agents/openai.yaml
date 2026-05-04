@@ -1,0 +1,4 @@
+interface:
+  display_name: "TYPO3 News Extension"
+  short_description: "Guide for EXT:news install, overrides, and DDEV workflow"
+  default_prompt: "Use $typo3-news-extension to install, configure, and override EXT:news for this TYPO3 DDEV project."

@@ -1,0 +1,23 @@
+{
+  "skill_name": "typo3-content-blocks",
+  "evals": [
+    {
+      "id": 1,
+      "prompt": "Create a new TYPO3 Content Block content element called teaser-card in the site package. It should have a reusable header field, an image field, teaser text, frontend and backend preview templates, and the necessary post-creation commands.",
+      "expected_output": "A Content Block implementation plan or file changes using ContentBlocks/ContentElements/teaser-card, valid config.yaml structure, labels/templates/assets where appropriate, and cache/database/lint follow-up commands.",
+      "files": []
+    },
+    {
+      "id": 2,
+      "prompt": "Fix this Content Blocks lint error: /fields/3/fields/0 Additional object properties are not allowed: max. Explain how you would find the affected YAML and what validation command to run afterward.",
+      "expected_output": "A troubleshooting response that interprets the JSON pointer path, checks the relevant nested field against the correct schema, removes or replaces the invalid option, and reruns content-blocks:lint.",
+      "files": []
+    },
+    {
+      "id": 3,
+      "prompt": "An existing TYPO3 Content Block renders in the frontend but editors only see label identifiers in the backend and the icon is missing from the new content element wizard. Troubleshoot it.",
+      "expected_output": "A layered troubleshooting checklist covering language/labels.xlf, possible TCA label override limits, assets/icon.svg placement, system cache flush, registration path, and backend permissions.",
+      "files": []
+    }
+  ]
+}

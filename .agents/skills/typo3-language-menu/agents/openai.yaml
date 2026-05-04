@@ -1,0 +1,4 @@
+interface:
+  display_name: "TYPO3 Language Menu"
+  short_description: "Language switcher with browser detection and cookie"
+  default_prompt: "Use $typo3-language-menu to build a TYPO3 v13+ language switcher with the language-menu data processor, browser-preference redirect, and cookie persistence."

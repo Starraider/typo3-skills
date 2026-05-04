@@ -1,0 +1,4 @@
+interface:
+  display_name: "TYPO3 FlexForms (v14+)"
+  short_description: "Implement and maintain FlexForms for TYPO3 v14+"
+  default_prompt: "Use $typo3-flexforms to create, structure, or fix FlexForm configurations for plugins and content elements in this TYPO3 v14+ project."

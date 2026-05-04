@@ -1,0 +1,4 @@
+interface:
+  display_name: "TYPO3 Container (b13/container)"
+  short_description: "Grid/container content elements with b13/container"
+  default_prompt: "Use $typo3-container to install, configure, and build nested grid content elements in TYPO3 using the b13/container extension."

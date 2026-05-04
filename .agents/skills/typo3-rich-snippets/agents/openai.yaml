@@ -1,0 +1,4 @@
+interface:
+  display_name: "TYPO3 Rich Snippets"
+  short_description: "Structured data (JSON-LD) for TYPO3 SEO"
+  default_prompt: "Use $typo3-rich-snippets to choose schema.org types, generate and validate JSON-LD/Microdata/RDFa, and integrate structured data via TYPO3 Fluid or TypoScript."

@@ -1,0 +1,4 @@
+interface:
+  display_name: "TYPO3 Menu Data Processors"
+  short_description: "Navigation menus via menu/language-menu processors"
+  default_prompt: "Use $typo3-menu-dataprocessor to build or modify navigation menus, breadcrumbs, and language switchers in TYPO3 v13+ with data processors and Fluid templates."

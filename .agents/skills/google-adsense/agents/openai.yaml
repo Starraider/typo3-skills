@@ -1,0 +1,4 @@
+interface:
+  display_name: "Google AdSense"
+  short_description: "AdSense setup, optimization, and compliance"
+  default_prompt: "Use $google-adsense to integrate AdSense on this website, configure the AdSense account for stronger revenue, and keep the implementation aligned with publisher policies and privacy requirements."

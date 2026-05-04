@@ -1,0 +1,4 @@
+interface:
+  display_name: "Google Tag Manager"
+  short_description: "GTM setup, consent-aware tagging, and Google tag governance"
+  default_prompt: "Use $google-tag-manager to implement or repair Google Tag Manager on this website, centralize Google tags, wire privacy-compliant consent behavior, and give exact GTM-side setup steps that stay aligned with $google-cmp-adsense, $google-analytics, and $google-adsense."

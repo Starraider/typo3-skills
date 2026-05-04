@@ -1,0 +1,4 @@
+interface:
+  display_name: "Google CMP for AdSense"
+  short_description: "Google CMP, Consent Mode, and AdSense setup"
+  default_prompt: "Use $google-cmp-adsense to implement Google's CMP, wire Consent Mode v2, and produce privacy-compliant AdSense, GA4, Google Ads, and GTM setup steps for this website."

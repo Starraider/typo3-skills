@@ -1,0 +1,4 @@
+interface:
+  display_name: "TYPO3 Playwright Workflow"
+  short_description: "Day-to-day Playwright verification and VRT in DDEV"
+  default_prompt: "Use $typo3-playwright-workflow to verify TYPO3 frontend changes with Playwright in DDEV — screenshots, @stitch-vrt runs, and visual-diff debugging."

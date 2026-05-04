@@ -1,0 +1,4 @@
+interface:
+  display_name: "TYPO3 Content Blocks"
+  short_description: "Create and troubleshoot TYPO3 Content Blocks"
+  default_prompt: "Use $typo3-content-blocks to create, edit, or debug TYPO3 Content Blocks (friendsoftypo3/content-blocks) — config.yaml, templates, fields, previews, and schema validation."

@@ -1,0 +1,4 @@
+interface:
+  display_name: "TYPO3 Tailwind CSS Migration"
+  short_description: "Migrate a TYPO3 theme to Tailwind v4 in DDEV"
+  default_prompt: "Use $typo3-tailwind-migration to migrate an existing TYPO3 site package from legacy CSS to Tailwind v4 with a VRT-first workflow in DDEV."

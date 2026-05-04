@@ -1,0 +1,4 @@
+interface:
+  display_name: "Tailwind CSS v4 Workflow"
+  short_description: "Tailwind v4 PostCSS build workflow for TYPO3/DDEV"
+  default_prompt: "Use $tailwind-v4-workflow whenever working on Tailwind CSS v4 sources, @theme tokens, @source directives, or build pipelines in this TYPO3/DDEV project."

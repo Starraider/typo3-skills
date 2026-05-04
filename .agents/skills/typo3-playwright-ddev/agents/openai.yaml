@@ -1,0 +1,4 @@
+interface:
+  display_name: "TYPO3 Playwright (DDEV Setup)"
+  short_description: "Set up Playwright infrastructure for TYPO3 in DDEV"
+  default_prompt: "Use $typo3-playwright-ddev to install, configure, or repair the Playwright environment for a TYPO3 project running in DDEV."

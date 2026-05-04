@@ -1,0 +1,4 @@
+interface:
+  display_name: "TYPO3 Fluid Patterns"
+  short_description: "Battle-tested Fluid template patterns for site packages"
+  default_prompt: "Use $typo3-fluid-patterns when building or maintaining Fluid templates in a TYPO3 v12+ site package — layouts, partials, CMS-first content, responsive images, accessibility, and JS hooks."

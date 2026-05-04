@@ -1,0 +1,4 @@
+interface:
+  display_name: "TYPO3 Scheduler Tasks"
+  short_description: "Create and modify TYPO3 v14 Scheduler tasks"
+  default_prompt: "Use $typo3-scheduler-task to create or modify a TYPO3 v14 Scheduler task with the correct TCA registration and task class wiring."

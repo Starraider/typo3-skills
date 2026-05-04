@@ -1,0 +1,4 @@
+interface:
+  display_name: "TYPO3 TypoScript Conditions"
+  short_description: "Frontend TypoScript conditions for TYPO3 v14"
+  default_prompt: "Use $typo3-typoscript-conditions to add or fix frontend TypoScript conditions in TYPO3 v14 — page IDs, rootlines, site identifiers, languages, users, and TYPO3 versions."

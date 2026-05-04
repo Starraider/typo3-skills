@@ -1,0 +1,4 @@
+interface:
+  display_name: "TYPO3 Favicon & Web Manifest"
+  short_description: "Configure favicons and web app manifest for TYPO3"
+  default_prompt: "Use $typo3-favicon-manifest to set up or update favicons, platform icons, and the web app manifest for this TYPO3 site package."

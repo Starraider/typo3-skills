@@ -1,0 +1,4 @@
+interface:
+  display_name: "TYPO3 Extbase Plugin"
+  short_description: "Build Extbase plugins: domain models, controllers, TCA"
+  default_prompt: "Use $typo3-extbase-plugin to scaffold or extend Extbase plugins in this TYPO3 project — domain models, repositories, controllers, TCA, and plugin registration."

@@ -1,0 +1,4 @@
+interface:
+  display_name: "TYPO3 Site Config & Sets"
+  short_description: "Placement authority for TYPO3 v14 site configuration"
+  default_prompt: "Use $typo3-site-config-sets to decide where TYPO3 v14 site-handling configuration belongs — config/sites/, Configuration/Sets/, or typed site setting definitions."

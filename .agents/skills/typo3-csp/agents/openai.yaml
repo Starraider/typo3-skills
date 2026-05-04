@@ -1,0 +1,4 @@
+interface:
+  display_name: "TYPO3 Content Security Policy"
+  short_description: "Implement and harden CSP in TYPO3 v12–v14"
+  default_prompt: "Use $typo3-csp to enable, configure, or harden Content Security Policies in this TYPO3 project — report-only rollout, csp.yaml sources, extension-level rules, and enforcement."

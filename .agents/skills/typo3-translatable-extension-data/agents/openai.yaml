@@ -1,0 +1,4 @@
+interface:
+  display_name: "TYPO3 Translatable Extension Data"
+  short_description: "Localize custom extension records in TYPO3 v13+/v14+"
+  default_prompt: "Use $typo3-translatable-extension-data to make custom TYPO3 extension tables translatable — TCA columns, SQL schema, repositories, and language-aware Extbase queries."

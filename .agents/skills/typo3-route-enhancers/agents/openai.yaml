@@ -1,0 +1,4 @@
+interface:
+  display_name: "TYPO3 Route Enhancers"
+  short_description: "Speaking URLs via TYPO3 site-config routeEnhancers"
+  default_prompt: "Use $typo3-route-enhancers to configure or fix TYPO3 routeEnhancers for Extbase plugins, detail pages, filters, pagination, and aliases in site configuration."

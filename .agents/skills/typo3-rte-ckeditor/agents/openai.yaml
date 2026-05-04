@@ -1,0 +1,4 @@
+interface:
+  display_name: "TYPO3 RTE CKEditor"
+  short_description: "Configure TYPO3 rich text editor presets"
+  default_prompt: "Use $typo3-rte-ckeditor to configure a TYPO3 RTE preset in my sitepackage."

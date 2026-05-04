@@ -1,0 +1,4 @@
+interface:
+  display_name: "Google AdSense for Search"
+  short_description: "AFS setup, optimization, and policy compliance"
+  default_prompt: "Use $google-adsense-search to add, configure, or troubleshoot Google AdSense for Search (AFS) on this site — including AFS sign-up, search styles, code placement, parameter tuning, and privacy/compliance."
