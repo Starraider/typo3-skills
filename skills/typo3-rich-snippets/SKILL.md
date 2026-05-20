@@ -45,7 +45,7 @@ Follow this checklist for every markup block:
 
 - [ ] Set `@context` to `https://schema.org`
 - [ ] Use the most specific `@type` (e.g., `NewsArticle` over `Article`)
-- [ ] Include all **required** properties (see [reference.md](reference.md))
+- [ ] Include all **required** properties (see [references/reference.md](references/reference.md))
 - [ ] Include **recommended** properties where data is available
 - [ ] Use `@id` for entity cross-referencing within the page
 - [ ] Use ISO 8601 for all dates
@@ -54,7 +54,7 @@ Follow this checklist for every markup block:
 
 ### 4. Integrate into the Page
 
-**Server-side (TYPO3 Fluid):** See [typo3-integration.md](typo3-integration.md)
+**Server-side (TYPO3 Fluid):** See [references/typo3-integration.md](references/typo3-integration.md)
 **Client-side (JS):** Inject a `<script type="application/ld+json">` element dynamically.
 
 Quick Fluid example:
@@ -83,7 +83,7 @@ Run validation in this order:
 3. **Google Rich Results Test**: https://search.google.com/test/rich-results
 4. **Schema Markup Validator**: https://validator.schema.org/
 
-For automated validation, see [testing.md](testing.md) and `scripts/validate-jsonld.js`.
+For automated validation, see [references/testing.md](references/testing.md) and `scripts/validate-jsonld.js`.
 
 ## Common Pitfalls
 
@@ -109,9 +109,9 @@ For automated validation, see [testing.md](testing.md) and `scripts/validate-jso
 6. **Test after every change**: Validate before deploying to production
 7. **Monitor in Google Search Console**: Check "Enhancements" reports for errors
 
-## Additional Resources
+## Load References As Needed
 
-- Detailed type reference and JSON-LD examples: [reference.md](reference.md)
-- TYPO3 Fluid & TypoScript integration: [typo3-integration.md](typo3-integration.md)
-- Testing strategies and automated validation: [testing.md](testing.md)
-- Validation script: [scripts/validate-jsonld.js](scripts/validate-jsonld.js)
+- Detailed type reference and JSON-LD examples: [references/reference.md](references/reference.md)
+- TYPO3 Fluid & TypoScript integration: [references/typo3-integration.md](references/typo3-integration.md)
+- Testing strategies and automated validation: [references/testing.md](references/testing.md)
+- Validation script: `scripts/validate-jsonld.js`
