@@ -147,9 +147,14 @@ Verify end-to-end after changes:
 3. Prefer minimal diffs when retrofitting existing TYPO3 projects.
 4. Document assumptions explicitly when file names, site IDs, or route enhancer names are inferred.
 
+## Load References As Needed
+
+- Implementation patterns: [references/implementation-patterns.md](references/implementation-patterns.md)
+- External resources: [references/resources.md](references/resources.md)
+
 ## References
 
-Use this source pattern when aligning implementation details:
+Use these external sources when needed:
 
 - [TYPO3 app icon integration article (t3forum)](https://t3forum.net/d/405-einbindung-von-app-icons-in-typo3)
 - [RealFaviconGenerator](https://realfavicongenerator.net/)
