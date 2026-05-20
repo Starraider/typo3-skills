@@ -386,6 +386,11 @@ Do not attempt to construct breadcrumbs or menus inside Extbase Controllers (e.g
 
 ---
 
+## Load References As Needed
+
+- Complete options reference: [references/menu-processor-options.md](references/menu-processor-options.md)
+- Fluid template patterns: [references/fluid-templates.md](references/fluid-templates.md)
+
 ## References
 
 - [Menu Guide](https://docs.typo3.org/m/typo3/reference-typoscript/main/en-us/Guide/Menu/Index.html)
