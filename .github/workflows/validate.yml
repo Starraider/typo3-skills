@@ -8,38 +8,4 @@ on:
 
 jobs:
   validate-skills:
-    runs-on: ubuntu-latest
-
-    steps:
-      - name: Checkout code
-        uses: actions/checkout@v4
-
-      - name: Setup Node.js
-        uses: actions/setup-node@v4
-        with:
-          node-version: '20'
-
-      - name: Get list of skills
-        id: skills
-        run: |
-          # Get all skill directories as newline-separated list
-          find ./skills -maxdepth 1 -type d -not -path './skills' | sort > skills.txt
-          echo "skills_file=skills.txt" >> $GITHUB_OUTPUT
-
-      - name: Validate each skill
-        run: |
-          # Read skills from file and validate each
-          while IFS= read -r skill_dir; do
-            if [ -n "$skill_dir" ]; then
-              skill_name=$(basename "$skill_dir")
-              echo "Validating skill: $skill_name"
-
-              # Run validation for each skill
-              # Enforce: references and agents directories (standard for this repo)
-              # Validate references: Check that file references in SKILL.md actually exist
-              npx -y @flashbrew/validate-skill@latest \
-                --path "$skill_dir" \
-                --enforce-directories "references,agents" \
-                --validate-references "true"
-            fi
-          done < skills.txt
+    uses: netresearch/skill-repo-skill/.github/workflows/validate.yml@main
