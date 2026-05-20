@@ -7,7 +7,6 @@
 # Environment variables for configuration:
 #   VENDOR_NAME      - Vendor prefix (default: netresearch)
 #   AUTHOR_URL       - Required author URL (default: https://www.netresearch.de)
-#   COMPOSER_REQUIRE - Composer plugin to require (default: netresearch/composer-agent-skill-plugin)
 #
 # Exit: 0 = valid, 1 = errors found
 
@@ -18,7 +17,6 @@ REPO_DIR="${1:-.}"
 # Configurable defaults (can be overridden via environment)
 VENDOR_NAME="${VENDOR_NAME:-netresearch}"
 AUTHOR_URL="${AUTHOR_URL:-https://www.netresearch.de}"
-COMPOSER_REQUIRE="${COMPOSER_REQUIRE:-netresearch/composer-agent-skill-plugin}"
 
 ERRORS=0
 WARNINGS=0
@@ -38,6 +36,11 @@ if ! command -v python3 &>/dev/null; then
     echo -e "${RED}ERROR:${NC} python3 is required for JSON parsing but not found in PATH"
     exit 1
 fi
+
+# Create temp dir for Python scripts
+SCRIPT_DIR="$(cd "$(dirname "$0")" && pwd)"
+TEMP_DIR=$(mktemp -d)
+trap "rm -rf $TEMP_DIR" EXIT
 
 echo "Validating skill repository: $REPO_DIR"
 echo "(Vendor: $VENDOR_NAME, Author URL: $AUTHOR_URL)"
@@ -62,7 +65,7 @@ if [[ -n "$SKILL_FILE" ]]; then
 
     # Frontmatter delimiter
     if head -1 "$SKILL_FILE" | grep -q "^---$"; then
-        CLOSING_LINE=$(sed -n '2,30{/^---$/=}' "$SKILL_FILE" | head -1)
+        CLOSING_LINE=$(awk '{if(/^---$/ && NR>1 && NR<=30) print NR; if(NR>30) exit}' "$SKILL_FILE" | head -1)
         if [[ -z "$CLOSING_LINE" ]]; then
             error "SKILL.md frontmatter has opening --- but no closing --- delimiter"
         else
@@ -151,25 +154,28 @@ if [[ -f "$REPO_DIR/composer.json" ]]; then
         error "composer.json type must be 'ai-agent-skill'"
     fi
 
-    COMP_LICENSE=$(python3 - "$REPO_DIR" <<'PYEOF' 2>/dev/null || echo ""
+    # Get license using Python
+    cat > "$TEMP_DIR/get_license.py" <<'PYEOF'
 import json, sys
-with open(f'{sys.argv[1]}/composer.json', 'r') as f:
+with open(sys.argv[1] + '/composer.json', 'r') as f:
     print(json.load(f).get('license', ''))
 PYEOF
-)
+    COMP_LICENSE=$(python3 "$TEMP_DIR/get_license.py" "$REPO_DIR" 2>/dev/null || echo "")
+
     if [[ "$COMP_LICENSE" == "(MIT AND CC-BY-SA-4.0)" ]]; then
         success "composer.json license is correct SPDX expression"
     else
         warning "composer.json license should be '(MIT AND CC-BY-SA-4.0)', got: $COMP_LICENSE"
     fi
 
-    # Name check with configurable vendor
-    COMP_NAME=$(python3 - "$REPO_DIR" <<'PYEOF' 2>/dev/null || echo ""
+    # Get name using Python
+    cat > "$TEMP_DIR/get_name.py" <<'PYEOF'
 import json, sys
-with open(f'{sys.argv[1]}/composer.json', 'r') as f:
+with open(sys.argv[1] + '/composer.json', 'r') as f:
     print(json.load(f).get('name', ''))
 PYEOF
-)
+    COMP_NAME=$(python3 "$TEMP_DIR/get_name.py" "$REPO_DIR" 2>/dev/null || echo "")
+
     REPO_NAME=""
     if [[ -n "${GITHUB_REPOSITORY:-}" ]]; then
         REPO_NAME="${GITHUB_REPOSITORY#*/}"
@@ -190,7 +196,7 @@ PYEOF
         error "composer.json name must match $VENDOR_NAME/{repo-name}: $COMP_NAME"
     fi
 
-    # Plugin dependency (configurable)
+    # Plugin dependency
     if grep -q "composer-agent-skill-plugin" "$REPO_DIR/composer.json"; then
         success "composer.json requires skill plugin"
     else
@@ -198,7 +204,7 @@ PYEOF
     fi
 
     # ai-agent-skill extra path(s) exist
-    SKILL_PATH_ERRORS=$(python3 - "$REPO_DIR" <<'PYEOF' 2>/dev/null || echo "ERROR"
+    cat > "$TEMP_DIR/check_skill_paths.py" <<'PYEOF'
 import json, os, sys
 repo_dir = sys.argv[1]
 data = json.load(open(os.path.join(repo_dir, 'composer.json')))
@@ -213,7 +219,8 @@ else:
         else:
             print('OK:' + p)
 PYEOF
-)
+    SKILL_PATH_ERRORS=$(python3 "$TEMP_DIR/check_skill_paths.py" "$REPO_DIR" 2>/dev/null || echo "ERROR")
+
     if [[ "$SKILL_PATH_ERRORS" == "MISSING" ]]; then
         error "composer.json missing extra.ai-agent-skill"
     elif [[ "$SKILL_PATH_ERRORS" == "ERROR" ]]; then
@@ -235,18 +242,22 @@ PLUGIN_FILE="$REPO_DIR/.claude-plugin/plugin.json"
 if [[ -f "$PLUGIN_FILE" ]]; then
     success "plugin.json exists"
 
-    PLUGIN_NAME=$(python3 - "$PLUGIN_FILE" <<'PYEOF' 2>/dev/null || echo ""
+    # Get plugin name
+    cat > "$TEMP_DIR/get_plugin_name.py" <<'PYEOF'
 import json, sys
 with open(sys.argv[1], 'r') as f:
     print(json.load(f).get('name', ''))
 PYEOF
-)
-    SKILL_COUNT=$(python3 - "$PLUGIN_FILE" <<'PYEOF' 2>/dev/null || echo "1"
+    PLUGIN_NAME=$(python3 "$TEMP_DIR/get_plugin_name.py" "$PLUGIN_FILE" 2>/dev/null || echo "")
+
+    # Get skill count
+    cat > "$TEMP_DIR/get_skill_count.py" <<'PYEOF'
 import json, sys
 with open(sys.argv[1], 'r') as f:
     print(len(json.load(f).get('skills', [])))
 PYEOF
-)
+    SKILL_COUNT=$(python3 "$TEMP_DIR/get_skill_count.py" "$PLUGIN_FILE" 2>/dev/null || echo "1")
+
     if [[ "$SKILL_COUNT" -le 1 ]]; then
         if [[ -n "$NAME" ]] && [[ "$PLUGIN_NAME" == "$NAME" ]]; then
             success "plugin.json name matches SKILL.md: $PLUGIN_NAME"
@@ -258,24 +269,31 @@ PYEOF
     fi
 
     # Skills is array
-    if python3 - "$PLUGIN_FILE" <<'PYEOF' 2>/dev/null; then
+    if python3 -c "import json,sys; json.load(open(sys.argv[1]))['skills']" "$PLUGIN_FILE" 2>/dev/null; then
         success "plugin.json skills is array"
     else
         error "plugin.json skills must be an array"
     fi
 
     # All skill paths exist
-    MISSING_PATHS=$(python3 - "$PLUGIN_FILE" "$REPO_DIR" <<'PYEOF' 2>/dev/null || echo ""
+    cat > "$TEMP_DIR/check_plugin_paths.py" <<'PYEOF'
 import json, os, sys
 plugin_file = sys.argv[1]
 repo_dir = sys.argv[2]
 data = json.load(open(plugin_file))
 for path in data.get('skills', []):
-    full_path = os.path.join(repo_dir, path.lstrip('./'))
+    # Strip leading ./
+    clean_path = path.lstrip('./')
+    # Add SKILL.md if it's a directory path (not a direct file)
+    if not clean_path.endswith('.md'):
+        full_path = os.path.join(repo_dir, clean_path, 'SKILL.md')
+    else:
+        full_path = os.path.join(repo_dir, clean_path)
     if not os.path.isfile(full_path):
         print(path)
 PYEOF
-)
+    MISSING_PATHS=$(python3 "$TEMP_DIR/check_plugin_paths.py" "$PLUGIN_FILE" "$REPO_DIR" 2>/dev/null || echo "")
+
     if [[ -z "$MISSING_PATHS" ]]; then
         success "All plugin.json skill paths exist"
     else
@@ -285,12 +303,13 @@ PYEOF
     fi
 
     # Author URL (configurable)
-    PLUGIN_AUTHOR_URL=$(python3 - "$PLUGIN_FILE" <<'PYEOF' 2>/dev/null || echo ""
+    cat > "$TEMP_DIR/get_author_url.py" <<'PYEOF'
 import json, sys
 with open(sys.argv[1], 'r') as f:
     print(json.load(f).get('author', {}).get('url', ''))
 PYEOF
-)
+    PLUGIN_AUTHOR_URL=$(python3 "$TEMP_DIR/get_author_url.py" "$PLUGIN_FILE" 2>/dev/null || echo "")
+
     if [[ "$PLUGIN_AUTHOR_URL" == "$AUTHOR_URL" ]]; then
         success "plugin.json author.url is $AUTHOR_URL"
     else
