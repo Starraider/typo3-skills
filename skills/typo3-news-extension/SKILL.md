@@ -24,6 +24,11 @@ In a typical TYPO3 site-package project, also inspect:
 - `packages/my-site-package/Resources/Private/Templates/News/`
 - `packages/my-site-package/Resources/Private/Partials/News/`
 
+## Load References As Needed
+
+- Plugin configuration, TypoScript settings, and clone patterns: [references/plugin-reference.md](references/plugin-reference.md)
+- Template override patterns, SEO requirements, and Fluid snippets: [references/template-patterns.md](references/template-patterns.md)
+
 ## Related Skills
 
 - **`typo3-xml-sitemap`** — Covers the full sitemap configuration for news records using `NewsXmlSitemapDataProvider`, including `fieldToParameterMap`, `excludedTypes`, Google News sitemap, and multi-language support. Use it when adding or debugging news entries in `/sitemap.xml`.
