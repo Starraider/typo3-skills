@@ -5,3 +5,7 @@
 .Trashes
 .fseventsd/
 Icon?
+
+# Composer
+/vendor/
+composer.lock

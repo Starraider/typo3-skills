@@ -1,0 +1,39 @@
+{
+  "name": "typo3-skills",
+  "version": "1.0.0",
+  "skills": [
+    "./skills/typo3-site-config-sets",
+    "./skills/typo3-typoscript-conditions",
+    "./skills/typo3-favicon-manifest",
+    "./skills/typo3-fluid-patterns",
+    "./skills/typo3-menu-dataprocessor",
+    "./skills/typo3-language-menu",
+    "./skills/typo3-route-enhancers",
+    "./skills/typo3-xml-sitemap",
+    "./skills/typo3-rich-snippets",
+    "./skills/typo3-csp",
+    "./skills/typo3-content-blocks",
+    "./skills/typo3-container",
+    "./skills/typo3-extbase-plugin",
+    "./skills/typo3-flexforms",
+    "./skills/typo3-rte-ckeditor",
+    "./skills/typo3-form-yaml",
+    "./skills/typo3-scheduler-task",
+    "./skills/typo3-translatable-extension-data",
+    "./skills/typo3-news-extension",
+    "./skills/tailwind-v4-workflow",
+    "./skills/typo3-tailwind-migration",
+    "./skills/typo3-playwright-ddev",
+    "./skills/typo3-playwright-workflow",
+    "./skills/google-tag-manager",
+    "./skills/google-analytics",
+    "./skills/google-cmp-adsense",
+    "./skills/google-adsense",
+    "./skills/google-adsense-search"
+  ],
+  "license": "(MIT AND CC-BY-SA-4.0)",
+  "author": {
+    "name": "Sven Kalbhenn",
+    "url": "https://www.skom.de"
+  }
+}

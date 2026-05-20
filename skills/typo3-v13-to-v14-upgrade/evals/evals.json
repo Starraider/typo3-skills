@@ -1,0 +1,23 @@
+{
+  "skill_name": "typo3-v13-to-v14-upgrade",
+  "evals": [
+    {
+      "id": 1,
+      "prompt": "Analyze this TYPO3 13 Composer project for TYPO3 14 readiness. Inventory extensions, identify Composer blockers, and produce a risk-ranked pre-upgrade checklist. Do not change files.",
+      "expected_output": "A structured analysis report with project baseline, extension compatibility matrix, Composer blocker commands/results to gather, deprecation scan plan, and pre-upgrade checklist.",
+      "files": []
+    },
+    {
+      "id": 2,
+      "prompt": "Create a detailed step-by-step migration plan for upgrading our TYPO3 13 sitepackage to TYPO3 14. Include Rector, Fractor, DDEV commands, upgrade wizards, Playwright/a11y verification, and rollback points.",
+      "expected_output": "A migration plan using the skill template with ordered phases, DDEV-first commands, Rector/Fractor dry-run and apply steps, test gates, accessibility checks, and rollback strategy.",
+      "files": []
+    },
+    {
+      "id": 3,
+      "prompt": "Start executing the TYPO3 v13 to v14 upgrade. First inspect the worktree and dependency constraints, then apply only safe pre-upgrade refactors with Rector and Fractor dry-runs before changing Composer constraints.",
+      "expected_output": "An execution-oriented workflow that checks git status, gathers dependency constraints, protects unrelated changes, runs dry-runs first, reports findings, and avoids Composer upgrade until blockers are understood.",
+      "files": []
+    }
+  ]
+}

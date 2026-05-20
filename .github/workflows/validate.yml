@@ -1,0 +1,46 @@
+name: Validate Skills
+
+on:
+  push:
+    branches: [main, develop]
+  pull_request:
+    branches: [main, develop]
+
+jobs:
+  validate-skills:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Checkout code
+        uses: actions/checkout@v4
+
+      - name: Setup Node.js
+        uses: actions/setup-node@v4
+        with:
+          node-version: '20'
+
+      - name: Get list of skills
+        id: skills
+        run: |
+          # Get all skill directories (each skill is a directory under /skills)
+          skills=$(find ./skills -maxdepth 1 -type d -not -path './skills' | sort)
+          echo "skills=$skills" >> $GITHUB_OUTPUT
+          echo "Found skills: $skills"
+
+      - name: Validate each skill
+        run: |
+          # Parse the skills list (multiline string)
+          echo "${{ steps.skills.outputs.skills }}" | while read -r skill_dir; do
+            if [ -n "$skill_dir" ]; then
+              skill_name=$(basename "$skill_dir")
+              echo "Validating skill: $skill_name"
+
+              # Run validation for each skill
+              # Enforce: references and agents directories (standard for this repo)
+              # Validate references: Check that file references in SKILL.md actually exist
+              npx -y @flashbrew/validate-skill@latest \
+                --path "$skill_dir" \
+                --enforce-directories "references,agents" \
+                --validate-references "true"
+            fi
+          done
