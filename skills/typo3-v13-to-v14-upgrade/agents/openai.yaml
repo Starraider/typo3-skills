@@ -1,0 +1,4 @@
+interface:
+  display_name: "TYPO3 v13 to v14 Upgrade"
+  short_description: "Upgrade TYPO3 13 to TYPO3 14: analyze, plan, execute migrations"
+  default_prompt: "Use typo3-v13-to-v14-upgrade when the user mentions upgrading TYPO3 v13 to v14, checking extension compatibility, Composer blockers, Rector/Fractor migrations, deprecations, or planning a major-version migration."

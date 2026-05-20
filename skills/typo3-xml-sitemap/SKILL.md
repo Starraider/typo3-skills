@@ -262,3 +262,8 @@ When applying this skill, produce:
 - the exact `config/sites/<site>/config.yaml` route enhancer changes when needed
 - a note about table, plugin namespace, detail page, storage PID, and slug-field assumptions
 - verification steps with the actual local domain and TYPO3 CLI command
+
+## Load References As Needed
+
+- Sitemap configuration patterns: [references/configuration-patterns.md](references/configuration-patterns.md)
+- Verification and diagnostic commands: [references/verification.md](references/verification.md)

@@ -323,3 +323,8 @@ Use current official documentation during each real upgrade because TYPO3 14 gui
 - TYPO3 pre-upgrade tasks: `https://docs.typo3.org/m/typo3/reference-coreapi/14.3/en-us/Administration/Upgrade/Major/PreupgradeTasks/Index.html`
 - TYPO3 Composer major upgrade workflow: `https://docs.typo3.org/m/typo3/reference-coreapi/main/en-us/Administration/Upgrade/Major/UpgradeCore.html`
 - TYPO3 Composer migration and version constraints: `https://docs.typo3.org/m/typo3/reference-coreapi/14.3/en-us/Administration/Upgrade/MigrateToComposer/MigrationSteps.html`
+
+## Load References As Needed
+
+- Rector and Fractor command reference: [references/command-reference.md](references/command-reference.md)
+- Upgrade plan template and documentation links: [references/plan-template.md](references/plan-template.md)

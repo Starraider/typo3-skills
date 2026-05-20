@@ -1,4 +1,4 @@
 interface:
   display_name: "TYPO3 XML Sitemap"
-  short_description: "EXT:seo XML sitemaps for TYPO3 v14"
-  default_prompt: "Use $typo3-xml-sitemap to configure TYPO3 v14 EXT:seo XML sitemaps — page sitemaps, custom record providers, multi-language hreflang, and route-enhancer mapping."
+  short_description: "Configure XML sitemaps with EXT:seo, route enhancers, custom providers"
+  default_prompt: "Use typo3-xml-sitemap when the user mentions XML sitemap, /sitemap.xml, RecordsXmlSitemapDataProvider, custom sitemap providers, EXT:news sitemap setup, or sitemap route enhancer configuration."
