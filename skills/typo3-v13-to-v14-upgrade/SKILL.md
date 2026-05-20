@@ -1,8 +1,6 @@
 ---
 name: typo3-v13-to-v14-upgrade
-description: Assist with TYPO3 13 to TYPO3 14 upgrade analysis, planning, and execution. Use this skill whenever the user mentions upgrading TYPO3 v13, TYPO3 14 readiness, extension compatibility, Composer blockers, Rector or Fractor migration work, deprecations, upgrade wizards, or asks for a TYPO3 major-version migration plan. This skill inventories installed extensions, prepares pre-upgrade tasks, produces a detailed step-by-step migration plan, and can then help execute the upgrade safely.
-user-invocable: true
-argument-hint: [PROJECT_PATH=<path>] [TARGET_VERSION=<14.x>] [MODE=analyze|plan|execute]
+description: "Use when upgrading TYPO3 13 to TYPO3 14, checking extension compatibility, Composer blockers, Rector/Fractor migrations, deprecations, or planning a major-version migration. Covers analysis, planning, and execution of TYPO3 13 to 14 upgrades in Composer-based projects."
 ---
 
 # TYPO3 v13 to v14 Upgrade
