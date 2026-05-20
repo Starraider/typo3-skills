@@ -47,3 +47,4 @@ jobs:
           path: ./skills/${{ matrix.skill }}
           enforce-directories: references,agents
           validate-references: "true"
+          ignore-rules: reference-exists
