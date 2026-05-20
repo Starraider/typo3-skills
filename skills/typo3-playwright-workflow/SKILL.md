@@ -101,3 +101,7 @@ ddev exec "cd packages/[theme-name] && npx playwright test Tests/e2e/<file>.spec
 ```
 
 Update snapshots only after reviewing and accepting the visual change.
+
+## Load References As Needed
+
+- VRT patterns and commands: [references/vrt-patterns.md](references/vrt-patterns.md)

@@ -374,3 +374,8 @@ When applying this skill, produce:
 - a short explanation of how each placeholder maps to real plugin arguments
 - any required slug, mapper, or page-scoping assumptions
 - a verification checklist covering generation, resolving, and cHash behavior
+
+## Load References As Needed
+
+- Configuration patterns and aspect mappers: [references/configuration-patterns.md](references/configuration-patterns.md)
+- Ready-made patterns and verification checklist: [references/ready-made-patterns.md](references/ready-made-patterns.md)
