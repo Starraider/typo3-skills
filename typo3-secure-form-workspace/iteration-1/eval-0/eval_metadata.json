@@ -1,0 +1,11 @@
+{
+  "eval_id": 0,
+  "eval_name": "securing-cms-form",
+  "prompt": "I need to secure our contact form `contact-Form.form.yaml` by enabling invisible reCAPTCHA and the built-in honeypot. I want to add a reCAPTCHA element at the end of the form. Can you configure this in `packages/theme-skom/Resources/Private/Forms/contact-Form.form.yaml`?",
+  "assertions": [
+    "Contact Form YAML includes honeypot.enable: true under renderingOptions.",
+    "Contact Form YAML includes useInvisibleRecaptcha: true under renderingOptions.",
+    "Contact Form YAML includes type: Recaptcha in the renderables list.",
+    "Contact Form YAML includes identifier: Recaptcha under the recaptcha renderable validators."
+  ]
+}

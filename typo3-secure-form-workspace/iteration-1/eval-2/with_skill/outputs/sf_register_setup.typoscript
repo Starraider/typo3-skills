@@ -1,0 +1,22 @@
+plugin.tx_sfregister {
+    settings {
+        # Register reCAPTCHA as a captcha possibility
+        captcha {
+            recaptcha = Evoweb\Recaptcha\Adapter\SfRegisterAdapter
+        }
+
+        fields {
+            configuration {
+                # Change the captcha field type to 'Recaptcha'
+                captcha.type = Recaptcha
+            }
+        }
+
+        # Tell the validation to use the reCAPTCHA adapter on creation
+        validation {
+            create {
+                captcha = Evoweb\SfRegister\Validation\Validator\CaptchaValidator(type = recaptcha)
+            }
+        }
+    }
+}

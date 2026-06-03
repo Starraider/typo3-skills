@@ -1,0 +1,4 @@
+interface:
+  display_name: "Merge TYPO3 Site Packages"
+  short_description: "Merge TYPO3 site packages safely"
+  default_prompt: "Use $typo3-merge-sitepackages to merge two TYPO3 site packages into one target extension."

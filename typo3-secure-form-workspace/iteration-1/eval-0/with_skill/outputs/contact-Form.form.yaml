@@ -1,0 +1,96 @@
+identifier: contactForm
+type: Form
+label: 'Contact Form'
+prototypeName: standard
+renderingOptions:
+  submitButtonLabel: Submit
+  useInvisibleRecaptcha: true
+  honeypot:
+    enable: true
+finishers:
+  -
+    options:
+      subject: 'Contact from Factory-Outlet-Center'
+      recipients:
+        support@factory-outlet-center.biz: Sven
+      senderAddress: '{email-1}'
+      senderName: '{text-1}'
+      addHtmlPart: true
+      attachUploads: false
+      translation:
+        language: default
+      title: ''
+      message: '<p>Das Kontaktformular auf factory-outlet-center.biz wurde ausgefüllt:<br><br>{formValues}</p>'
+      errorMessage: ''
+    identifier: EmailToReceiver
+    defaultValue: ''
+  -
+    options:
+      message: "<p><strong>Thank you for your message!&nbsp;</strong><br>We will answer to you as soon as possible.&nbsp;</p>\n<p>Greetings,&nbsp;</p>\n<p>Factory-Outlets-Center Support</p>"
+      contentElementUid: ''
+      errorMessage: ''
+    identifier: Confirmation
+  renderables:
+  -
+    renderingOptions:
+      previousButtonLabel: ''
+      nextButtonLabel: ''
+    type: Page
+    identifier: page-1
+    label: Contact
+    renderables:
+      -
+        defaultValue: ''
+        type: Text
+        identifier: text-1
+        label: Name
+        properties:
+          fluidAdditionalAttributes:
+            required: required
+        validators:
+          -
+            identifier: NotEmpty
+      -
+        defaultValue: ''
+        type: Email
+        identifier: email-1
+        label: E-Mail
+        properties:
+          fluidAdditionalAttributes:
+            required: required
+        validators:
+          -
+            identifier: EmailAddress
+          -
+            identifier: NotEmpty
+      -
+        defaultValue: ''
+        type: Textarea
+        identifier: textarea-1
+        label: 'Your Message'
+        properties:
+          fluidAdditionalAttributes:
+            required: required
+        validators:
+          -
+            identifier: NotEmpty
+      -
+        type: Checkbox
+        identifier: checkbox-1
+        label: '<p>Yes, I have read and agree to the <a href="t3://page?uid=8">Privacy Policy</a>.</p>'
+        properties:
+          fluidAdditionalAttributes:
+            required: required
+        validators:
+          -
+            identifier: NotEmpty
+      -
+        renderingOptions:
+          doNotShowLabel: true
+        type: Recaptcha
+        identifier: recaptcha-1
+        label: reCAPTCHA
+        validators:
+          -
+            identifier: Recaptcha
+variants: {  }

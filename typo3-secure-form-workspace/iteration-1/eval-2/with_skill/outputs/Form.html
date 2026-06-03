@@ -1,0 +1,43 @@
+<html xmlns:f="http://typo3.org/ns/TYPO3/CMS/Fluid/ViewHelpers"
+      xmlns:recaptcha="http://typo3.org/ns/Evoweb/Recaptcha/ViewHelpers"
+      data-namespace-typo3-fluid="true">
+
+<f:layout name="Default" />
+
+<f:section name="Main">
+    <div class="registration-form max-w-lg mx-auto bg-white p-8 rounded-xl shadow-lg border border-slate-100">
+        <h2 class="text-2xl font-bold text-slate-800 mb-6">Create Account</h2>
+
+        <f:render partial="FieldError" arguments="{object: User}" />
+        <f:render partial="FlashMessages" />
+
+        <f:form action="create" name="user" object="{user}" class="space-y-5">
+            <!-- Username/Email Field -->
+            <div>
+                <label for="username" class="block text-sm font-medium text-slate-700 mb-1">Username / E-Mail Address</label>
+                <f:form.textfield field="username" id="username" class="w-full px-4 py-2 border border-slate-300 rounded-lg focus:ring-primary focus:border-primary" />
+            </div>
+
+            <!-- Password Field -->
+            <div>
+                <label for="password" class="block text-sm font-medium text-slate-700 mb-1">Password</label>
+                <f:form.password field="password" id="password" class="w-full px-4 py-2 border border-slate-300 rounded-lg focus:ring-primary focus:border-primary" />
+            </div>
+
+            <!-- Honeypot Field for Spam Protection (Invisible to humans, visible to naive bots) -->
+            <div class="sr-only opacity-0 absolute -z-50 pointer-events-none" aria-hidden="true">
+                <label for="register-website">Leave this field blank</label>
+                <f:form.textfield name="website" id="register-website" tabindex="-1" additionalAttributes="{autocomplete: 'off'}" />
+            </div>
+
+            <!-- Google reCAPTCHA Verification Widget -->
+            <div class="recaptcha-wrapper my-4">
+                <recaptcha:render />
+            </div>
+
+            <!-- Submit Button -->
+            <f:form.submit value="Register Now" class="w-full py-3 px-4 bg-primary text-white font-semibold rounded-lg hover:bg-primary-hover transition duration-200" />
+        </f:form>
+    </div>
+</f:section>
+</html>

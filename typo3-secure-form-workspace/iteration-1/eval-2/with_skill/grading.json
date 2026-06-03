@@ -1,0 +1,29 @@
+{
+  "expectations": [
+    {
+      "text": "TypoScript maps captcha.recaptcha to Evoweb\\Recaptcha\\Adapter\\SfRegisterAdapter.",
+      "passed": true,
+      "evidence": "captcha.recaptcha = Evoweb\\Recaptcha\\Adapter\\SfRegisterAdapter is set."
+    },
+    {
+      "text": "TypoScript configures captcha.type to Recaptcha.",
+      "passed": true,
+      "evidence": "captcha.type = Recaptcha is set."
+    },
+    {
+      "text": "TypoScript configures validation.create.captcha to Evoweb\\SfRegister\\Validation\\Validator\\CaptchaValidator(type = recaptcha).",
+      "passed": true,
+      "evidence": "validation.create.captcha validator mapping is set correct."
+    },
+    {
+      "text": "Fluid Form template uses {namespace recaptcha=Evoweb\\Recaptcha\\ViewHelpers} or <recaptcha:render />.",
+      "passed": true,
+      "evidence": "Both recaptcha namespace import and render viewhelper are present."
+    },
+    {
+      "text": "Fluid Form template includes an invisible honeypot field.",
+      "passed": true,
+      "evidence": "The website field is wrapped inside a sr-only and opacity-0 div."
+    }
+  ]
+}

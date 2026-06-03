@@ -1,0 +1,27 @@
+{
+  "skill_name": "typo3-secure-form",
+  "evals": [
+    {
+      "id": 0,
+      "prompt": "I need to secure our contact form `contact-Form.form.yaml` by enabling invisible reCAPTCHA and the built-in honeypot. I want to add a reCAPTCHA element at the end of the form. Can you configure this in `packages/theme-skom/Resources/Private/Forms/contact-Form.form.yaml`?",
+      "expected_output": "The contact-Form.form.yaml file is updated to enable invisible recaptcha, enable honeypot, and add the Recaptcha renderable/validator.",
+      "files": [
+        "packages/theme-skom/Resources/Private/Forms/contact-Form.form.yaml"
+      ]
+    },
+    {
+      "id": 1,
+      "prompt": "I want to add the Google reCAPTCHA v2 testing credentials to the global configuration in `settings.php` so we can test the forms locally in DDEV without getting site owner errors.",
+      "expected_output": "The config/system/settings.php file is updated under EXTENSIONS.recaptcha to include the official Google reCAPTCHA v2 local testing public and private keys.",
+      "files": [
+        "config/system/settings.php"
+      ]
+    },
+    {
+      "id": 2,
+      "prompt": "I want to secure our frontend user registration form. Please configure TypoScript settings for `sf-register` to use the recaptcha adapter (`Evoweb\\Recaptcha\\Adapter\\SfRegisterAdapter`) and validate the CAPTCHA during registration. Also, show me how to render the reCAPTCHA in our Fluid registration template.",
+      "expected_output": "Provides the correct TypoScript settings linking evoweb/recaptcha adapter to sf-register, enabling validation on creation, and includes the Fluid markup with recaptcha namespace.",
+      "files": []
+    }
+  ]
+}

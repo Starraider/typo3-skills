@@ -1,0 +1,12 @@
+{
+  "eval_id": 2,
+  "eval_name": "sf-register-securing",
+  "prompt": "I want to secure our frontend user registration form. Please configure TypoScript settings for `sf-register` to use the recaptcha adapter (`Evoweb\\Recaptcha\\Adapter\\SfRegisterAdapter`) and validate the CAPTCHA during registration. Also, show me how to render the reCAPTCHA in our Fluid registration template.",
+  "assertions": [
+    "TypoScript maps captcha.recaptcha to Evoweb\\Recaptcha\\Adapter\\SfRegisterAdapter.",
+    "TypoScript configures captcha.type to Recaptcha.",
+    "TypoScript configures validation.create.captcha to Evoweb\\SfRegister\\Validation\\Validator\\CaptchaValidator(type = recaptcha).",
+    "Fluid Form template uses {namespace recaptcha=Evoweb\\Recaptcha\\ViewHelpers} or <recaptcha:render />.",
+    "Fluid Form template includes an invisible honeypot field."
+  ]
+}

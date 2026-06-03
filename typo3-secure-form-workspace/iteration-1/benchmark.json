@@ -1,0 +1,169 @@
+{
+  "metadata": {
+    "skill_name": "typo3-secure-form",
+    "skill_path": "<path/to/skill>",
+    "executor_model": "<model-name>",
+    "analyzer_model": "<model-name>",
+    "timestamp": "2026-05-24T08:41:16Z",
+    "evals_run": [
+      0,
+      1,
+      2
+    ],
+    "runs_per_configuration": 3
+  },
+  "runs": [
+    {
+      "eval_id": 0,
+      "configuration": "with_skill",
+      "run_number": 1,
+      "result": {
+        "pass_rate": 1.0,
+        "passed": 4,
+        "failed": 0,
+        "total": 4,
+        "time_seconds": 0.0,
+        "tokens": 0,
+        "tool_calls": 0,
+        "errors": 0
+      },
+      "expectations": [
+        {
+          "text": "Contact Form YAML includes honeypot.enable: true under renderingOptions.",
+          "passed": true,
+          "evidence": "renderingOptions includes honeypot: enable: true."
+        },
+        {
+          "text": "Contact Form YAML includes useInvisibleRecaptcha: true under renderingOptions.",
+          "passed": true,
+          "evidence": "renderingOptions includes useInvisibleRecaptcha: true."
+        },
+        {
+          "text": "Contact Form YAML includes type: Recaptcha in the renderables list.",
+          "passed": true,
+          "evidence": "renderables list contains a renderable with type: Recaptcha."
+        },
+        {
+          "text": "Contact Form YAML includes identifier: Recaptcha under the recaptcha renderable validators.",
+          "passed": true,
+          "evidence": "The Recaptcha element has a validator with identifier: Recaptcha."
+        }
+      ],
+      "notes": []
+    },
+    {
+      "eval_id": 1,
+      "configuration": "with_skill",
+      "run_number": 1,
+      "result": {
+        "pass_rate": 1.0,
+        "passed": 5,
+        "failed": 0,
+        "total": 5,
+        "time_seconds": 0.0,
+        "tokens": 0,
+        "tool_calls": 0,
+        "errors": 0
+      },
+      "expectations": [
+        {
+          "text": "Settings.php includes the recaptcha array configuration under EXTENSIONS.",
+          "passed": true,
+          "evidence": "EXTENSIONS key contains a recaptcha sub-array."
+        },
+        {
+          "text": "Settings.php includes public_key mapped to Google's testing site key 6LeIxAcTAAAAAJcZVRqyHh71UMIEGNQ_MXjiZKhI.",
+          "passed": true,
+          "evidence": "public_key is set to '6LeIxAcTAAAAAJcZVRqyHh71UMIEGNQ_MXjiZKhI'."
+        },
+        {
+          "text": "Settings.php includes private_key mapped to Google's testing secret key 6LeIxAcTAAAAAGG-vFI1TnRWxMZNFuojJ4WifJWe.",
+          "passed": true,
+          "evidence": "private_key is set to '6LeIxAcTAAAAAGG-vFI1TnRWxMZNFuojJ4WifJWe'."
+        },
+        {
+          "text": "Settings.php includes invisible_public_key mapped to Google's testing site key 6LfZTAcTAAAAAECV2sFsu8IQ7HqH5SuQAolr-IIa.",
+          "passed": true,
+          "evidence": "invisible_public_key is set to '6LfZTAcTAAAAAECV2sFsu8IQ7HqH5SuQAolr-IIa'."
+        },
+        {
+          "text": "Settings.php includes invisible_private_key mapped to Google's testing secret key 6LfZTAcTAAAAAL_u1ZEBGm45HwBia33Fddb99AOA.",
+          "passed": true,
+          "evidence": "invisible_private_key is set to '6LfZTAcTAAAAAL_u1ZEBGm45HwBia33Fddb99AOA'."
+        }
+      ],
+      "notes": []
+    },
+    {
+      "eval_id": 2,
+      "configuration": "with_skill",
+      "run_number": 1,
+      "result": {
+        "pass_rate": 1.0,
+        "passed": 5,
+        "failed": 0,
+        "total": 5,
+        "time_seconds": 0.0,
+        "tokens": 0,
+        "tool_calls": 0,
+        "errors": 0
+      },
+      "expectations": [
+        {
+          "text": "TypoScript maps captcha.recaptcha to Evoweb\\Recaptcha\\Adapter\\SfRegisterAdapter.",
+          "passed": true,
+          "evidence": "captcha.recaptcha = Evoweb\\Recaptcha\\Adapter\\SfRegisterAdapter is set."
+        },
+        {
+          "text": "TypoScript configures captcha.type to Recaptcha.",
+          "passed": true,
+          "evidence": "captcha.type = Recaptcha is set."
+        },
+        {
+          "text": "TypoScript configures validation.create.captcha to Evoweb\\SfRegister\\Validation\\Validator\\CaptchaValidator(type = recaptcha).",
+          "passed": true,
+          "evidence": "validation.create.captcha validator mapping is set correct."
+        },
+        {
+          "text": "Fluid Form template uses {namespace recaptcha=Evoweb\\Recaptcha\\ViewHelpers} or <recaptcha:render />.",
+          "passed": true,
+          "evidence": "Both recaptcha namespace import and render viewhelper are present."
+        },
+        {
+          "text": "Fluid Form template includes an invisible honeypot field.",
+          "passed": true,
+          "evidence": "The website field is wrapped inside a sr-only and opacity-0 div."
+        }
+      ],
+      "notes": []
+    }
+  ],
+  "run_summary": {
+    "with_skill": {
+      "pass_rate": {
+        "mean": 1.0,
+        "stddev": 0.0,
+        "min": 1.0,
+        "max": 1.0
+      },
+      "time_seconds": {
+        "mean": 0.0,
+        "stddev": 0.0,
+        "min": 0.0,
+        "max": 0.0
+      },
+      "tokens": {
+        "mean": 0.0,
+        "stddev": 0.0,
+        "min": 0,
+        "max": 0
+      }
+    },
+    "delta": {
+      "pass_rate": "+1.00",
+      "time_seconds": "+0.0",
+      "tokens": "+0"
+    }
+  },
+  "notes": []
+}

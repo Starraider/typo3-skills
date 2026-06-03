@@ -1,0 +1,12 @@
+{
+  "eval_id": 1,
+  "eval_name": "google-recaptcha-credentials",
+  "prompt": "I want to add the Google reCAPTCHA v2 testing credentials to the global configuration in `settings.php` so we can test the forms locally in DDEV without getting site owner errors.",
+  "assertions": [
+    "Settings.php includes the recaptcha array configuration under EXTENSIONS.",
+    "Settings.php includes public_key mapped to Google's testing site key 6LeIxAcTAAAAAJcZVRqyHh71UMIEGNQ_MXjiZKhI.",
+    "Settings.php includes private_key mapped to Google's testing secret key 6LeIxAcTAAAAAGG-vFI1TnRWxMZNFuojJ4WifJWe.",
+    "Settings.php includes invisible_public_key mapped to Google's testing site key 6LfZTAcTAAAAAECV2sFsu8IQ7HqH5SuQAolr-IIa.",
+    "Settings.php includes invisible_private_key mapped to Google's testing secret key 6LfZTAcTAAAAAL_u1ZEBGm45HwBia33Fddb99AOA."
+  ]
+}

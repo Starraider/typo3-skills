@@ -1,0 +1,35 @@
+{
+  "summary": {
+    "pass_rate": 1.0,
+    "passed": 5,
+    "failed": 0,
+    "total": 5
+  },
+  "expectations": [
+    {
+      "text": "Settings.php includes the recaptcha array configuration under EXTENSIONS.",
+      "passed": true,
+      "evidence": "EXTENSIONS key contains a recaptcha sub-array."
+    },
+    {
+      "text": "Settings.php includes public_key mapped to Google's testing site key 6LeIxAcTAAAAAJcZVRqyHh71UMIEGNQ_MXjiZKhI.",
+      "passed": true,
+      "evidence": "public_key is set to '6LeIxAcTAAAAAJcZVRqyHh71UMIEGNQ_MXjiZKhI'."
+    },
+    {
+      "text": "Settings.php includes private_key mapped to Google's testing secret key 6LeIxAcTAAAAAGG-vFI1TnRWxMZNFuojJ4WifJWe.",
+      "passed": true,
+      "evidence": "private_key is set to '6LeIxAcTAAAAAGG-vFI1TnRWxMZNFuojJ4WifJWe'."
+    },
+    {
+      "text": "Settings.php includes invisible_public_key mapped to Google's testing site key 6LfZTAcTAAAAAECV2sFsu8IQ7HqH5SuQAolr-IIa.",
+      "passed": true,
+      "evidence": "invisible_public_key is set to '6LfZTAcTAAAAAECV2sFsu8IQ7HqH5SuQAolr-IIa'."
+    },
+    {
+      "text": "Settings.php includes invisible_private_key mapped to Google's testing secret key 6LfZTAcTAAAAAL_u1ZEBGm45HwBia33Fddb99AOA.",
+      "passed": true,
+      "evidence": "invisible_private_key is set to '6LfZTAcTAAAAAL_u1ZEBGm45HwBia33Fddb99AOA'."
+    }
+  ]
+}

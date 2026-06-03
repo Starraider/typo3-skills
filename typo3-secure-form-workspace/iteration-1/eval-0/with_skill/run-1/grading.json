@@ -1,0 +1,30 @@
+{
+  "summary": {
+    "pass_rate": 1.0,
+    "passed": 4,
+    "failed": 0,
+    "total": 4
+  },
+  "expectations": [
+    {
+      "text": "Contact Form YAML includes honeypot.enable: true under renderingOptions.",
+      "passed": true,
+      "evidence": "renderingOptions includes honeypot: enable: true."
+    },
+    {
+      "text": "Contact Form YAML includes useInvisibleRecaptcha: true under renderingOptions.",
+      "passed": true,
+      "evidence": "renderingOptions includes useInvisibleRecaptcha: true."
+    },
+    {
+      "text": "Contact Form YAML includes type: Recaptcha in the renderables list.",
+      "passed": true,
+      "evidence": "renderables list contains a renderable with type: Recaptcha."
+    },
+    {
+      "text": "Contact Form YAML includes identifier: Recaptcha under the recaptcha renderable validators.",
+      "passed": true,
+      "evidence": "The Recaptcha element has a validator with identifier: Recaptcha."
+    }
+  ]
+}
