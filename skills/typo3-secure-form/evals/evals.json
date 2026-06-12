@@ -3,10 +3,10 @@
   "evals": [
     {
       "id": 0,
-      "prompt": "I need to secure our contact form `contact-Form.form.yaml` by enabling invisible reCAPTCHA and the built-in honeypot. I want to add a reCAPTCHA element at the end of the form. Can you configure this in `packages/theme-skom/Resources/Private/Forms/contact-Form.form.yaml`?",
+      "prompt": "I need to secure our contact form `contact-Form.form.yaml` by enabling invisible reCAPTCHA and the built-in honeypot. I want to add a reCAPTCHA element at the end of the form. Can you configure this in `packages/my-site-package/Resources/Private/Forms/contact-Form.form.yaml`?",
       "expected_output": "The contact-Form.form.yaml file is updated to enable invisible recaptcha, enable honeypot, and add the Recaptcha renderable/validator.",
       "files": [
-        "packages/theme-skom/Resources/Private/Forms/contact-Form.form.yaml"
+        "packages/my-site-package/Resources/Private/Forms/contact-Form.form.yaml"
       ]
     },
     {

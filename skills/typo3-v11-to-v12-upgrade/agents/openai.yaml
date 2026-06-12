@@ -1,0 +1,4 @@
+interface:
+  display_name: "TYPO3 v11 to v12 Upgrade"
+  short_description: "Upgrade TYPO3 11 to TYPO3 12: analyze blockers and migrate"
+  default_prompt: "Use $typo3-v11-to-v12-upgrade to analyze or plan a TYPO3 11 to 12 upgrade, including extension compatibility, Composer blockers, Rector/Fractor migrations, and deprecations."

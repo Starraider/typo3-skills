@@ -56,7 +56,7 @@ TYPO3 Fluid uses a **3-tier rendering chain** for pages and a parallel chain for
 Page Layout (Layouts/Pages/Default.fluid.html)
   └── The outer HTML shell: <html>, <body>, asset loading, header/footer partials
   └── Defines sections: Stage, Main
-      └── Page Template (Pages/SkomContentpage.fluid.html)
+      └── Page Template (Pages/Contentpage.fluid.html)
           └── Fills sections with content columns via lib.dynamicContent
           └── Uses Wrapper partials for consistent component framing
 ```

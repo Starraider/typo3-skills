@@ -94,7 +94,7 @@ When content elements need different styling in sidebars vs. main content, propa
 **Page Layout → Section → Partial → Atom**
 
 ```html
-<!-- In the page layout (e.g., SkomContentpageSidebar.html) -->
+<!-- In the page layout (e.g., ContentpageSidebar.html) -->
 <f:section name="sidebar">
     <f:cObject typoscriptObjectPath="lib.dynamicContent" data="{colPos: 1}" />
 </f:section>

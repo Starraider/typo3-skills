@@ -1,0 +1,4 @@
+interface:
+  display_name: "TYPO3 v12 to v13 Upgrade"
+  short_description: "Plan and execute TYPO3 12 to 13 upgrades"
+  default_prompt: "Use $typo3-v12-to-v13-upgrade to analyze this Composer-based TYPO3 12 project and plan the move to TYPO3 13."

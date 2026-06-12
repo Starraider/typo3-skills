@@ -29,7 +29,12 @@
     "./skills/google-analytics",
     "./skills/google-cmp-adsense",
     "./skills/google-adsense",
-    "./skills/google-adsense-search"
+    "./skills/google-adsense-search",
+    "./skills/typo3-v11-to-v12-upgrade",
+    "./skills/typo3-v12-to-v13-upgrade",
+    "./skills/typo3-v13-to-v14-upgrade",
+    "./skills/typo3-merge-sitepackages",
+    "./skills/typo3-secure-form"
   ],
   "license": "(MIT AND CC-BY-SA-4.0)",
   "author": {

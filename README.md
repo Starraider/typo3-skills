@@ -65,6 +65,7 @@ Download a release from GitHub and extract to `~/.claude/skills/typo3-skills/`.
 | [typo3-xml-sitemap](skills/typo3-xml-sitemap/SKILL.md) | TYPO3 v14 XML sitemaps with EXT:seo — multi-language, page sitemaps, custom record sitemaps, PageType route enhancer, hreflang links. |
 | [typo3-rich-snippets](skills/typo3-rich-snippets/SKILL.md) | Schema.org structured data (JSON-LD/Microdata/RDFa) via Fluid and TypoScript for SEO-ready rich results. |
 | [typo3-csp](skills/typo3-csp/SKILL.md) | Content Security Policies in TYPO3 v12–v14 — report-only iteration, violation analysis, site & extension `csp.yaml`, full enforcement. |
+| [typo3-merge-sitepackages](skills/typo3-merge-sitepackages/SKILL.md) | Merge two TYPO3 site packages, theme extensions, or side-packages into one consolidated, TYPO3-compliant site package. |
 
 ### Content Elements & Plugins
 
@@ -79,6 +80,7 @@ Download a release from GitHub and extract to `~/.claude/skills/typo3-skills/`.
 | [typo3-scheduler-task](skills/typo3-scheduler-task/SKILL.md) | TYPO3 v14 Scheduler tasks — `tx_scheduler_task` registration, TCA configuration fields, migration from `AdditionalFieldProviderInterface`. |
 | [typo3-translatable-extension-data](skills/typo3-translatable-extension-data/SKILL.md) | Make extension records translatable — TCA, SQL translation columns, repositories/controllers returning localized overlays. |
 | [typo3-news-extension](skills/typo3-news-extension/SKILL.md) | `georgringer/news` in DDEV projects — Site Set / TypoScript settings, template overrides, SEO view helpers, Playwright VRT. |
+| [typo3-secure-form](skills/typo3-secure-form/SKILL.md) | Secure TYPO3 frontend forms (`cms-form`, `sf-register`) and configure Google reCAPTCHA spam protection. |
 
 ### Styling & Frontend Workflow
 
@@ -93,6 +95,14 @@ Download a release from GitHub and extract to `~/.claude/skills/typo3-skills/`.
 | --- | --- |
 | [typo3-playwright-ddev](skills/typo3-playwright-ddev/SKILL.md) | Set up Playwright infrastructure for TYPO3 in DDEV — initialization, browsers & add-ons, config, scripts, initial baselines. |
 | [typo3-playwright-workflow](skills/typo3-playwright-workflow/SKILL.md) | Day-to-day Playwright verification — Fluid/CSS/UI changes, screenshots, `@stitch-vrt` checks, debugging visual diffs. |
+
+### Upgrades & Migrations
+
+| Skill | Purpose |
+| --- | --- |
+| [typo3-v11-to-v12-upgrade](skills/typo3-v11-to-v12-upgrade/SKILL.md) | Analyze, plan, and execute TYPO3 v11 to v12 upgrades in Composer-based projects, resolving extensions, TCA, and platform requirements. |
+| [typo3-v12-to-v13-upgrade](skills/typo3-v12-to-v13-upgrade/SKILL.md) | Analyze, plan, and execute TYPO3 v12 to v13 upgrades in Composer-based projects, resolving extensions, TCA, and platform requirements. |
+| [typo3-v13-to-v14-upgrade](skills/typo3-v13-to-v14-upgrade/SKILL.md) | Analyze, plan, and execute TYPO3 v13 to v14 upgrades in Composer-based projects, resolving extensions, TCA, and platform requirements. |
 
 ### Google Integrations
 
