@@ -1,5 +1,17 @@
 # TYPO3 Skills
 
+> [!WARNING]
+> ### Repository Archived & Deprecated
+> **This repository is no longer maintained and has been archived.**
+>
+> The TYPO3 skills previously contained here have been split into three dedicated repositories, each complying with the new **"Agent Plugins 1.0.0"** standard:
+>
+> - **TYPO3 Integrators:** [ai-typo3-integrator-plugin](https://github.com/Starraider/ai-typo3-integrator-plugin)
+> - **TYPO3 Extension Developers:** [ai-typo3-extension-developer-plugin](https://github.com/Starraider/ai-typo3-extension-developer-plugin)
+> - **TYPO3 Migrations & Version Upgrades:** [ai-typo3-migrator-plugin](https://github.com/Starraider/ai-typo3-migrator-plugin)
+>
+> **Notice to all interested parties:** Please use only these replacement repositories going forward, as the TYPO3 skills in this repository are scheduled to be retired permanently.
+
 A collection of reusable **Agent Skills** for TYPO3 projects. Each skill teaches an AI coding agent how to perform a specific TYPO3-related task — from building Extbase plugins and Content Blocks to configuring CSP, route enhancers, Playwright VRT, Tailwind v4, or Google integrations.
 
 Skills are **project-agnostic**: generic placeholders (`my-site-package`, `Vendor\MySitePackage\`, `config/sites/<site-id>`, …) are resolved by the LLM at runtime. No manual find-and-replace needed.
@@ -135,9 +147,7 @@ Skills and documentation: [LICENSE-CC-BY-SA-4.0](LICENSE-CC-BY-SA-4.0)
 
 ## Contributing
 
-1. Fork the repository and create a feature branch.
-2. Add or modify skills under `skills/<skill-name>/` — always project-agnostic.
-3. Each skill needs at minimum `SKILL.md` and `agents/openai.yaml`.
-4. Submit a pull request with a clear description of what the skill does.
-
-Questions and feedback welcome via GitHub issues or e-mail: sven@skom.de
+This repository is archived and no longer maintained. New contributions or pull requests are not accepted here. Please direct all contributions, issues, and feedback to the respective replacement repositories:
+- [ai-typo3-integrator-plugin](https://github.com/Starraider/ai-typo3-integrator-plugin)
+- [ai-typo3-extension-developer-plugin](https://github.com/Starraider/ai-typo3-extension-developer-plugin)
+- [ai-typo3-migrator-plugin](https://github.com/Starraider/ai-typo3-migrator-plugin)
